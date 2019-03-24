@@ -165,8 +165,8 @@ class SinopeClient(object):
     def from_celcius(temp):
         return round((temp+1.8)+32, 2)
   
-    def get_outside_temperature(): #https://api.darksky.net/forecast/{your dark sky key}/{latitude},{logitude}
-        r = requests.get('https://api.darksky.net/forecast/cec066f47de6d0df1c4e6b6efb1fa2ff/'+self._latitude+','+self._longitude+'?exclude=minutely,hourly,daily,alerts,flags')
+    def get_outside_temperature(): #https://api.darksky.net/forecast/{your dark sky key xxxx}/{latitude},{logitude}
+        r = requests.get('https://api.darksky.net/forecast/xxxxxxxxxxxxxxxxxxxxxxxx/'+self._latitude+','+self._longitude+'?exclude=minutely,hourly,daily,alerts,flags')
         ledata =r.json()
         return to_celcius(float(json.dumps(ledata["currently"]["temperature"])))
     
