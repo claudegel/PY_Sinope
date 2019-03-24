@@ -66,7 +66,7 @@ data_power_timer = "000F0000" # time in minutes the power will stay on 0--255
 
 class SinopeClient(object):
 
-    def __init__(self, api_key, api_id, server, city_name, tz, latitude, longitude, timeout=REQUESTS_TIMEOUT):
+    def __init__(self, api_key, api_id, server, city_name, tz, latitude, longitude, dk_key, timeout=REQUESTS_TIMEOUT):
         """Initialize the client object."""
         self._api_key = api_key
         self._api_id = api_id
@@ -75,6 +75,7 @@ class SinopeClient(object):
         self._tz = tz
         self._latitude = latitude
         self._longitude = longitude
+        self._dk_key = dk_key
         self.device_data = {}
 
     def crc_count(bufer):
@@ -166,7 +167,7 @@ class SinopeClient(object):
         return round((temp+1.8)+32, 2)
   
     def get_outside_temperature(): #https://api.darksky.net/forecast/{your dark sky key xxxx}/{latitude},{logitude}
-        r = requests.get('https://api.darksky.net/forecast/xxxxxxxxxxxxxxxxxxxxxxxx/'+self._latitude+','+self._longitude+'?exclude=minutely,hourly,daily,alerts,flags')
+        r = requests.get('https://api.darksky.net/forecast/'+self._dk_key+'/'+self._latitude+','+self._longitude+'?exclude=minutely,hourly,daily,alerts,flags')
         ledata =r.json()
         return to_celcius(float(json.dumps(ledata["currently"]["temperature"])))
     
