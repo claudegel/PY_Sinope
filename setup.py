@@ -19,7 +19,7 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='Sinope, Neviweb',
-    install_requires=['crc8'],
+    install_requires=['crc8==0.0.5'],
     zip_safe=True,
     author='Claude Gelinas',
     author_email='claudegel@users.noreply.github.com',
