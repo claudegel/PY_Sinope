@@ -5,10 +5,10 @@ from setuptools import setup, find_packages
 print(find_packages())
 setup(
     name='PY_Sinope',
-    version='0.1.0',
+    version='0.1.5',
     description='python API for Sinopé devices',
-    long_description='python API to access Sinopé devices from Home Assistant: thermostats, ligth, dimmer and power switch'
-                     '(https://sinopetech.com). Requires Python 3.4+',
+    long_description='python API to access Sinopé devices from Home Assistant: thermostats, ligth, dimmer and power switch. \
+                     see (https://sinopetech.com). Requires Python 3.4+',
     url='https://github.com/claudegel/PY_Sinope',
     license='MIT',
     classifiers=[
