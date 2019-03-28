@@ -70,7 +70,7 @@ class SinopeClient(object):
         """Initialize the client object."""
         self._api_key = api_key
         self._api_id = api_id
-        self._network_name = server
+        self._server = server
         self._city_name = city_name
         self._tz = tz
         self._latitude = latitude
